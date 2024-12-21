@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CINESAATHI - Your Movie Recommendation Assistant</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>CINESAATHI</h1>
+            <p>Your Personal Movie Recommendation Assistant</p>
+        </header>
+
+        <div class="chat-container">
+            <div class="chat-box" id="chatBox">
+                <div class="message bot-message">
+                    <div class="message-content">
+                        Hello! I'm CINESAATHI, your movie recommendation assistant. Tell me what kind of movie you're in the mood for, or ask for recommendations based on your favorite movies!
+                    </div>
+                </div>
+            </div>
+
+            <div class="trailer-container" id="trailerContainer">
+                <!-- Trailer will be embedded here -->
+            </div>
+
+            <div class="input-container">
+                <input type="text" id="userInput" placeholder="Type your message here...">
+                <button id="sendButton">Send</button>
+            </div>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
