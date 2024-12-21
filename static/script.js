@@ -2,7 +2,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const chatBox = document.getElementById('chatBox');
     const userInput = document.getElementById('userInput');
     const sendButton = document.getElementById('sendButton');
-    const trailerContainer = document.getElementById('trailerContainer');
 
     function addMessage(message, isUser = false) {
         const messageDiv = document.createElement('div');
@@ -15,19 +14,6 @@ document.addEventListener('DOMContentLoaded', () => {
         messageDiv.appendChild(messageContent);
         chatBox.appendChild(messageDiv);
         chatBox.scrollTop = chatBox.scrollHeight;
-    }
-
-    function displayTrailer(trailerUrl) {
-        if (trailerUrl) {
-            trailerContainer.style.display = 'block';
-            trailerContainer.innerHTML = `
-                <iframe 
-                    src="${trailerUrl}"
-                    title="Movie Trailer"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen>
-                </iframe>`;
-        }
     }
 
     async function sendMessage() {
@@ -58,11 +44,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Add bot response
             addMessage(data.recommendation);
-
-            // Display trailer if available
-            if (data.trailer_url) {
-                displayTrailer(data.trailer_url);
-            }
 
         } catch (error) {
             console.error('Error:', error);
